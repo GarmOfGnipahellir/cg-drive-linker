@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.html -d ./"
+    "build": "parcel build src/index.html -d ./ --public-url /cg-drive-linker/"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"

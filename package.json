@@ -4,14 +4,22 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "parcel src/index.html",
     "build": "parcel build src/index.html -d ./ --public-url /cg-drive-linker/"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "@vue/component-compiler-utils": "^3.0.2",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "sass": "^1.23.3",
+    "typescript": "^3.7.2",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "@carbon/icons": "^10.6.1",
     "@carbon/vue": "^2.17.1",
     "googleapis": "39",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
   }
 }

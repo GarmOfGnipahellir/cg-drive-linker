@@ -16,7 +16,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@carbon/icons": "^10.6.1",
+    "@carbon/icons-vue": "^10.6.1",
     "@carbon/vue": "^2.17.1",
     "googleapis": "39",
     "vue": "^2.6.10",

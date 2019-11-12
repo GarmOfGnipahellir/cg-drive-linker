@@ -1,20 +1,20 @@
 // Client ID and API key from the Developer Console
-var CLIENT_ID =
+const CLIENT_ID =
     '404368161278-r3fe3d25hsifgnrjmnhspt9kln1589sc.apps.googleusercontent.com'
-var API_KEY = 'AIzaSyAtW45PibDKV137Zjhf0hqG6Ulm34FFiKs'
+    const API_KEY = 'AIzaSyAtW45PibDKV137Zjhf0hqG6Ulm34FFiKs'
 
 // Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = [
+const DISCOVERY_DOCS = [
     'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest',
 ]
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES =
+const SCOPES =
     'https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/drive.file'
 
-var pickerLoaded
-var oauthToken
+let pickerLoaded
+let oauthToken
 
 /**
  *  Initializes the API client library and sets up sign-in state
@@ -128,23 +128,7 @@ function pickerCallback(data) {
     document.getElementById('result').innerHTML = message
 }
 
-export class API {
-    constructor() {
-        this.gapiLoaded = false
-        window.handleClientLoad = function() {
-            this.gapiLoaded = true
-        }
-    }
-
-    onGapiLoaded() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => reject('timed out...'))
-
-            if (this.gapiLoaded) {
-                resolve()
-            }
-        })
-    }
+const api = {
 }
 
-export default api = new API()
+export default api

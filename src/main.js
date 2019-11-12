@@ -1,9 +1,25 @@
 import Vue from 'vue'
+import api from './api'
+
 import 'carbon-components/css/carbon-components.css'
-import CarbonComponentsVue from '@carbon/vue'
 import App from './App.vue'
 
-Vue.use(CarbonComponentsVue)
-new Vue({
-    render: createElement => createElement(App),
+let store = {
+    state: {
+        gapiLoaded: false,
+    },
+    onGapiLoaded() {
+        this.state.gapiLoaded = true
+    },
+}
+
+window.handleClientLoad = function() {
+    store.onGapiLoaded()
+}
+
+let vm = new Vue({
+    render: h => h(App),
+    data: {
+        state: store.state,
+    },
 }).$mount('#app')

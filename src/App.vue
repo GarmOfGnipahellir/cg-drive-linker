@@ -20,7 +20,10 @@
                             <cv-button v-on:click="createPicker" :icon="Link16">
                                 Get 'em links
                             </cv-button>
-                            <cv-button v-on:click="signOut" :icon="ChevronLeft16">
+                            <cv-button
+                                v-on:click="signOut"
+                                :icon="ChevronLeft16"
+                            >
                                 Sign out
                             </cv-button>
                         </div>
@@ -44,6 +47,7 @@
 
 <script>
 import Vue from 'vue'
+import copy from 'copy-to-clipboard'
 import File from './File.vue'
 import api from './api'
 
@@ -100,7 +104,7 @@ export default Vue.extend({
         },
 
         copyLinks: function() {
-            console.log(document.getElementById('links').innerText)
+            copy(document.getElementById('links').innerText)
         },
     },
 })

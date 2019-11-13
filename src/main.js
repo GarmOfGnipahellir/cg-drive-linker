@@ -1,9 +1,34 @@
 import Vue from 'vue'
+import api from './api'
+
 import 'carbon-components/css/carbon-components.css'
-import CarbonComponentsVue from '@carbon/vue'
 import App from './App.vue'
 
-Vue.use(CarbonComponentsVue)
+let store = {
+    state: {
+        gapiLoaded: false,
+        signedIn: false,
+        pickerLoaded: false,
+    },
+    onGapiLoaded(signedIn) {
+        this.state.gapiLoaded = true
+        this.state.signedIn = signedIn
+    },
+    onPickerLoaded() {
+        this.state.pickerLoaded = true
+    },
+}
+
+window.handleClientLoad = function() {
+    api.onGapiLoad(
+        signedIn => store.onGapiLoaded(signedIn),
+        store.onPickerLoaded()
+    )
+}
+
 new Vue({
-    render: createElement => createElement(App),
+    render: h => h(App),
+    data: {
+        state: store.state,
+    },
 }).$mount('#app')

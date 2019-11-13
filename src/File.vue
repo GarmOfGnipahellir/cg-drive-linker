@@ -45,5 +45,6 @@ export default Vue.extend({
 .container {
     width: 400px;
     max-width: 100%;
+    margin-bottom: 8px;
 }
 </style>

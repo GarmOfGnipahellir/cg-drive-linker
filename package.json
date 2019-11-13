@@ -18,7 +18,7 @@
   "dependencies": {
     "@carbon/icons-vue": "^10.6.1",
     "@carbon/vue": "^2.17.1",
-    "googleapis": "39",
+    "request": "^2.88.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.4"
   }

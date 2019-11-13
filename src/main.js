@@ -7,17 +7,26 @@ import App from './App.vue'
 let store = {
     state: {
         gapiLoaded: false,
+        signedIn: false,
+        pickerLoaded: false,
     },
-    onGapiLoaded() {
+    onGapiLoaded(signedIn) {
         this.state.gapiLoaded = true
+        this.state.signedIn = signedIn
+    },
+    onPickerLoaded() {
+        this.state.pickerLoaded = true
     },
 }
 
 window.handleClientLoad = function() {
-    store.onGapiLoaded()
+    api.onGapiLoad(
+        signedIn => store.onGapiLoaded(signedIn),
+        store.onPickerLoaded()
+    )
 }
 
-let vm = new Vue({
+new Vue({
     render: h => h(App),
     data: {
         state: store.state,
